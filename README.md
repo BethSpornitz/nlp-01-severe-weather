@@ -1,55 +1,40 @@
 
-# nlp-01-getting-started
+# nlp-01-severe-weather
 
-[![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](pyproject.toml)
-[![CI](https://github.com/denisecase/nlp-01-getting-started/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/denisecase/nlp-01-getting-started/actions/workflows/ci-python-zensical.yml)
-[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/nlp-01-getting-started/)
-
-[![uv managed](https://img.shields.io/badge/uv-managed-DE5FE9)](https://docs.astral.sh/uv/)
-[![ty type checked](https://img.shields.io/badge/ty-type_checked-2F80ED)](https://docs.astral.sh/ty/)
-[![Zensical docs](https://img.shields.io/badge/Zensical-docs-purple)](https://zensical.org/)
-[![MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
-
-> Retrieve, process, and visualize text from the web using Python.
+> Retrieve, process, and visualize text about tornadoes and severe weather using Python.
 
 ## Project Overview
 
-Author: Denise Case
+Author: Beth Spornitz
 
 Date: 2026 October
 
 First project in the Web Mining and Applied NLP course.
 
-Web Mining and Applied Natural Language Processing (NLP)
-focus on retrieving, processing, and analyzing text
-from the web and other digital sources.
+This project explores web mining and natural language processing (NLP) using Python.
 
-The goal is to establish a working Python environment,
-explore a professional project structure,
-run a Python text analysis script,
-and verify that the project works.
+The goal is to analyze text from Wikipedia articles about tornadoes and other severe weather events. The project will use text cleaning, word frequency analysis, and visualizations to identify common patterns.
 
-The project is configured in
-[pyproject.toml](pyproject.toml).
+The project is based on Denise Case's NLP Getting Started example and will be customized based on the assignment.
+
+The project is configured in [pyproject.toml](pyproject.toml).
+
 
 ## Data
 
-The example retrieves HTML from a public web page
-using the Requests library.
+The project currently retrieves HTML from a Wikipedia article about Natural Language Processing using the Requests library.
 
-BeautifulSoup parses the HTML and extracts text
-for analysis.
+BeautifulSoup parses the HTML and extracts text for analysis.
+
+The project will be customized to retrieve and analyze Wikipedia articles about tornadoes and other severe weather events.
 
 No local input dataset is required.
 
-The example uses the Wikipedia article on
-[Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing).
-
 ## Approach
 
-The project uses Python to retrieve and analyze web text.
+The project uses Python to retrieve and analyze text from web pages.
 
-The example demonstrates:
+The example currently demonstrates:
 
 - Retrieving HTML using HTTP requests.
 - Parsing HTML and extracting text with BeautifulSoup.
@@ -58,19 +43,9 @@ The example demonstrates:
 - Visualizing frequent words using Matplotlib.
 - Creating word clouds to explore vocabulary patterns.
 
-Explore these important project components:
+As the project develops, these techniques will be applied to Wikipedia articles about tornadoes and other severe weather events.
 
-- [pyproject.toml](pyproject.toml) - project identity, dependencies, and tool configuration.
-- [src/nlp/web_words.py](src/nlp/web_words.py) - executable Python analysis.
-- [notebooks/web_words.ipynb](notebooks/web_words.ipynb) - interactive Jupyter notebook example.
-- [tests/](tests/) - automated tests.
-- [.github/workflows/](.github/workflows/) - automated testing and documentation deployment.
-- [docs/](docs/) - project documentation.
-- [zensical.toml](zensical.toml) - documentation configuration.
-
-The goal is to get the project running,
-inspect the results, and understand the basic workflow
-for acquiring and analyzing text.
+The goal is to identify frequently used terminology, visualize vocabulary patterns, and eventually compare language across different types of severe weather.
 
 ## Run the Project
 
@@ -122,7 +97,7 @@ uv run python -m pytest
 
 ## Project Documentation
 
-The [hosted documentation site](https://denisecase.github.io/nlp-01-getting-started/)
+The [hosted documentation site](https://bethspornitz.github.io/nlp-01-severe-weather/)
 is published using Zensical and GitHub Pages.
 
 The documentation site is used to present the project report,
@@ -136,8 +111,9 @@ to check project files and publish the docs.
 
 GitHub Actions include:
 
-- [CI: Python and Documentation Checks](https://github.com/denisecase/nlp-01-getting-started/actions/workflows/ci-python-zensical.yml)
-- [CD: Documentation Deployment](https://github.com/denisecase/nlp-01-getting-started/actions/workflows/deploy-zensical.yml)
+- [CI: Python and Documentation Checks](https://github.com/BethSpornitz/nlp-01-severe-weather/actions/workflows/ci-python-zensical.yml)
+- [CD: Documentation Deployment](https://github.com/BethSpornitz/nlp-01-severe-weather/actions/workflows/deploy-zensical.yml)
+
 
 ## Developer Reference
 
@@ -220,9 +196,11 @@ testing, documentation, and code quality.
 - [prek](https://prek.j178.dev/) - Git hooks and automated checks, configured in [prek.toml](prek.toml).
 - [Zensical](https://zensical.org/) - project documentation, configured in [zensical.toml](zensical.toml).
 
+
 ## Links
 
-- [Hosted Documentation](https://denisecase.github.io/nlp-01-getting-started/)
+- [Hosted Documentation](https://bethspornitz.github.io/nlp-01-severe-weather/)
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)
+
