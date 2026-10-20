@@ -105,10 +105,6 @@ Pipeline executed successfully!
 
 The script also records execution information in the project log.
 
-### Example Visualization
-
-![Word Cloud Example](docs/images/word_cloud_example.png)
-
 ## Verification
 
 Run the automated tests:
