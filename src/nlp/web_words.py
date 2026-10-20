@@ -28,6 +28,7 @@ Run from root project folder with:
 # Section 1. Setup and Imports (includes logging deps)
 # ============================================================
 import logging
+import os
 from pathlib import Path
 
 from bs4 import BeautifulSoup
@@ -226,7 +227,8 @@ plt.ylabel("Frequency")
 plt.tight_layout()
 images_path = ROOT_PATH / "docs" / "images"
 images_path.mkdir(parents=True, exist_ok=True)
-plt.savefig(images_path / "tornado_word_frequency.png", dpi=150)
+if "PYTEST_CURRENT_TEST" not in os.environ:
+    plt.savefig(images_path / "tornado_word_frequency.png", dpi=150)
 plt.show()
 
 
@@ -262,7 +264,8 @@ plt.imshow(wc)
 plt.axis("off")
 plt.title("Tornado Word Cloud")
 plt.tight_layout()
-plt.savefig(images_path / "tornado_word_cloud.png", dpi=150)
+if "PYTEST_CURRENT_TEST" not in os.environ:
+    plt.savefig(images_path / "tornado_word_cloud.png", dpi=150)
 plt.show()
 
 # ============================================================
