@@ -22,30 +22,29 @@ The project is configured in [pyproject.toml](pyproject.toml).
 
 ## Data
 
-The project currently retrieves HTML from a Wikipedia article about Natural Language Processing using the Requests library.
+This project retrieves text from the [Wikipedia article about tornadoes](https://en.wikipedia.org/wiki/Tornado) using Python and the Requests library.
 
-BeautifulSoup parses the HTML and extracts text for analysis.
+BeautifulSoup parses the HTML and extracts the text for analysis.
 
-The project will be customized to retrieve and analyze Wikipedia articles about tornadoes and other severe weather events.
+The article provides information about tornado characteristics, formation, weather conditions, and impacts.
 
-No local input dataset is required.
+No local input dataset is required because the script retrieves the article directly from Wikipedia.
 
 ## Approach
 
-The project uses Python to retrieve and analyze text from web pages.
+This project uses Python to retrieve and analyze text from Wikipedia's tornado article.
 
-The example currently demonstrates:
+The analysis includes:
 
-- Retrieving HTML using HTTP requests.
+- Retrieving HTML using Requests.
 - Parsing HTML and extracting text with BeautifulSoup.
-- Cleaning and normalizing text.
-- Counting word frequencies using Polars.
-- Visualizing frequent words using Matplotlib.
-- Creating word clouds to explore vocabulary patterns.
+- Converting words to lowercase and removing punctuation.
+- Filtering selected common words and Wikipedia reference terms.
+- Calculating word frequencies using Polars.
+- Creating a bar chart with Matplotlib.
+- Generating a word cloud to visualize frequently used terminology.
 
-As the project develops, these techniques will be applied to Wikipedia articles about tornadoes and other severe weather events.
-
-The goal is to identify frequently used terminology, visualize vocabulary patterns, and eventually compare language across different types of severe weather.
+The custom stop-word filter improves the analysis by removing words that do not contribute meaningful information about tornadoes. Months are intentionally retained because seasonal terminology may be relevant to severe weather research.
 
 ## Run the Project
 
@@ -66,22 +65,45 @@ interactive version of the analysis.
 
 ## Results
 
-The example retrieves web text,
-computes word frequencies,
-and displays a frequency bar chart and word cloud.
+The tornado article analysis produced the following results:
 
-Successful execution produces:
+- **15,744** raw words extracted from the article.
+- **9,706** words after initial cleaning.
+- **9,032** words remaining after custom stop-word filtering.
 
-```shell
-========================
+The most frequent terms included:
+
+| Word | Frequency |
+|---|---:|
+| tornado | 324 |
+| tornadoes | 224 |
+| weather | 88 |
+| storm | 57 |
+| cloud | 55 |
+| radar | 35 |
+| damage | 34 |
+
+The results highlight terminology related to tornado formation, weather conditions, and impacts.
+
+### Tornado Word Frequency Chart
+
+![Tornado Word Frequency Chart](docs/images/tornado_word_frequency.png)
+
+### Tornado Word Cloud
+
+![Tornado Word Cloud](docs/images/tornado_word_cloud.png)
+
+The visualizations provide two ways to explore the article's most frequently used words.
+
+**Limitation:** Word frequencies reflect how often terms appear in the Wikipedia article, not how frequently tornadoes occur in the real world.
+
+Successful execution displays:
+
+```text
 Pipeline executed successfully!
-========================
 ```
 
-A `project.log` file is created in the project root.
-
-This confirms that the Python analysis executes
-and the logging system works.
+The script also records execution information in the project log.
 
 ### Example Visualization
 
