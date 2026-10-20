@@ -154,6 +154,25 @@ count_of_clean_words: int = len(clean_words)
 print("First 20 cleaned words:")
 print(clean_words[0:20])
 print(f"Total cleaned words: {count_of_clean_words:,}")
+# Remove common words and Wikipedia reference terms
+# that do not contribute to the tornado analysis.
+stop_words = {
+    "from",
+    "that",
+    "with",
+    "this",
+    "than",
+    "retrieved",
+    "archived",
+    "original",
+    "wikipedia",
+}
+
+clean_words = [word for word in clean_words if word not in stop_words]
+
+count_of_clean_words = len(clean_words)
+
+print(f"Words after stop-word filtering: {count_of_clean_words:,}")
 
 
 # ============================================================
@@ -205,6 +224,7 @@ plt.title("Most Frequent Words")
 plt.xlabel("Word")
 plt.ylabel("Frequency")
 plt.tight_layout()
+plt.savefig("docs/images/tornado_word_frequency.png", dpi=150)
 plt.show()
 
 
@@ -238,7 +258,9 @@ plt.figure(figsize=(12, 6))
 # Display the word cloud image with imshow() and turn off axes for a cleaner look.
 plt.imshow(wc)
 plt.axis("off")
-plt.title("Word Cloud")
+plt.title("Tornado Word Cloud")
+plt.tight_layout()
+plt.savefig("docs/images/tornado_word_cloud.png", dpi=150)
 plt.show()
 
 # ============================================================

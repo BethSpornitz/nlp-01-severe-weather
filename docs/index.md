@@ -1,77 +1,80 @@
-# Web Mining and Applied NLP Project Report
+# Tornado Text Analysis
 
-Web Mining and Applied NLP | Project 01 | Example Report
+Web Mining and Applied NLP | Project 01 | Beth Spornitz
 
 ## Overview
 
-This project establishes a professional Python environment
-for acquiring and analyzing text from web pages.
+This project analyzes the vocabulary used in Wikipedia's article about tornadoes. The goal is to identify frequently used terms and explore how basic text cleaning affects the results.
 
-The objective is to demonstrate that a Python project can
-retrieve web content, extract text, compute word frequencies,
-and produce visualizations using a reproducible workflow.
+## Data Source
+
+The data comes from the [Wikipedia Tornado article](https://en.wikipedia.org/wiki/Tornado).
+
+The Python script retrieves the article's HTML and extracts its text for analysis.
 
 ## Tools and Methods
 
-The project uses:
+- Python and Requests to retrieve the web page.
+- BeautifulSoup to extract text from HTML.
+- Text cleaning to convert words to lowercase, remove punctuation, and filter selected common words and Wikipedia reference terms.
+- Polars to calculate word frequencies.
+- Matplotlib and WordCloud to visualize the results.
 
-- Python for text acquisition and analysis.
-- Requests for retrieving HTML from web pages.
-- BeautifulSoup for parsing HTML and extracting text.
-- Polars for computing word frequencies.
-- Matplotlib for frequency visualizations.
-- WordCloud for visual exploration of vocabulary.
-- Logging for execution records.
-- Ruff, ty, and pytest for code verification.
-- Zensical and GitHub Pages for published documentation.
+## Results
 
-The example script retrieves a Wikipedia article,
-extracts text, cleans words,
-and calculates token frequencies.
+The original tornado analysis contained 15,744 raw words and 9,706 cleaned words.
 
-The analysis produces a frequency bar chart
-and a word cloud.
+After adding a custom stop-word filter, 9,032 words remained.
 
-## Verification
+The most frequent words included:
 
-A successful execution displays:
+| Word | Frequency |
+|---|---:|
+| tornado | 324 |
+| tornadoes | 224 |
+| weather | 88 |
+| national | 57 |
+| storm | 57 |
+| cloud | 55 |
+| radar | 35 |
+| damage | 34 |
 
-    Pipeline executed successfully!
+### Tornado Word Frequency Chart
 
-The script records execution details in a project log.
+![Tornado Word Frequency Chart](images/tornado_word_frequency.png)
 
-These results demonstrate that the environment can
-retrieve, process, and visualize web text.
+### Tornado Word Cloud
 
-Automated tests provide additional verification
-of the project's expected behavior.
+![Tornado Word Cloud](images/tornado_word_cloud.png)
+
+The script completed successfully.
 
 ## Interpretation
 
-Web text contains both useful information and noise
-introduced by document structure and formatting.
+The most frequent words reflect the article's focus on tornadoes and severe weather. Terms such as storm, cloud, radar, and damage are relevant to understanding tornado characteristics and impacts.
 
-Simple text cleaning and frequency analysis
-provide an initial view of a document's vocabulary.
+Removing common words and reference terms made the results easier to interpret. However, some unrelated terms and publication years still appear in the analysis.  I would need to refine further to make sure they were all removed.
 
-These techniques establish a foundation
-for later work involving text preprocessing,
-corpus exploration, and natural language processing.
+## Limitations
 
-## Documentation Index
+This analysis uses only one Wikipedia article, so the results cannot represent all tornado-related information.
 
-- **Home** - this landing page
-- [**Project Instructions**](project-instructions.md)
-- [**Glossary**](glossary.md)
+The text also includes Wikipedia navigation and references, which can affect word frequencies. The stop-word filter removes some of this noise but does not eliminate it completely.
+
+Word frequency also measures how often terms appear in the article, not how frequently actual weather events occur.
+
+## Next Steps
+
+Future improvements could include analyzing multiple severe weather articles and removing references more precisely.
 
 ## Project Links
 
-- [GitHub Repository](https://github.com/denisecase/nlp-01-getting-started)
-- [Example Script](https://github.com/denisecase/nlp-01-getting-started/blob/main/src/nlp/web_words.py)
-- [Example Notebook](https://github.com/denisecase/nlp-01-getting-started/blob/main/notebooks/web_words.ipynb)
+- [GitHub Repository](https://github.com/BethSpornitz/nlp-01-severe-weather)
+- [Python Analysis Script](https://github.com/BethSpornitz/nlp-01-severe-weather/blob/main/src/nlp/web_words.py)
+- [Wikipedia Data Source](https://en.wikipedia.org/wiki/Tornado)
 
 ## Project Resources
 
 - [Project Instructions](project-instructions.md)
+- [Glossary](glossary.md)
 - [Professional Python Guide](https://denisecase.github.io/pro-analytics-02/)
-- [Professional Python Project Explainer](https://pup-pack.github.io/professional-python-project-explainer/)
