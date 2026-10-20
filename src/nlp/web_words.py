@@ -45,7 +45,7 @@ print("Imports complete.")
 
 LOG: logging.Logger = get_logger("CI", level="DEBUG")
 
-ROOT_PATH: Path = Path.cwd()
+ROOT_PATH: Path = Path(__file__).resolve().parents[2]
 NOTEBOOKS_PATH: Path = ROOT_PATH / "notebooks"
 SCRIPTS_PATH: Path = ROOT_PATH / "scripts"
 
@@ -224,7 +224,9 @@ plt.title("Most Frequent Words")
 plt.xlabel("Word")
 plt.ylabel("Frequency")
 plt.tight_layout()
-plt.savefig("docs/images/tornado_word_frequency.png", dpi=150)
+images_path = ROOT_PATH / "docs" / "images"
+images_path.mkdir(parents=True, exist_ok=True)
+plt.savefig(images_path / "tornado_word_frequency.png", dpi=150)
 plt.show()
 
 
@@ -260,7 +262,7 @@ plt.imshow(wc)
 plt.axis("off")
 plt.title("Tornado Word Cloud")
 plt.tight_layout()
-plt.savefig("docs/images/tornado_word_cloud.png", dpi=150)
+plt.savefig(images_path / "tornado_word_cloud.png", dpi=150)
 plt.show()
 
 # ============================================================
