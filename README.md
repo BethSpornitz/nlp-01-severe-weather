@@ -179,6 +179,19 @@ git commit -m "describe your changes in quotes"
 git push -u origin main
 ```
 
+## ## Technical Experiment: Changing the Source Article
+
+**Modification:** I changed the source URL in `web_words.py` from the Wikipedia article about natural language processing to the article about tornadoes.
+
+**Reason:** I wanted to see whether the same text analysis process would work with a different topic.
+
+**Prediction:** I expected weather related words to appear more frequently than natural language processing terms.
+
+**Results:** The script ran successfully. The tornado article contained 15,744 raw words and 9,706 cleaned words. The most frequent words included "tornado" (324), "tornadoes" (224), and "weather" (88).
+
+**What I learned:** The same Python code can analyze different web pages by changing the source URL. I also noticed that some frequent words, such as "retrieved" and "archived," came from Wikipedia references, which suggests the text cleaning process could be improved.
+
+
 ## Developer Notes
 
 - Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
